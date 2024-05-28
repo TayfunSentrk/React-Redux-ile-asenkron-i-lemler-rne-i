@@ -8,7 +8,7 @@ import apiUrl from "../../utils/apiUrl";
 
 const fetchPostsRequest=()=>{
     return {
-        type:fetchPostsRequest
+        type:FETCH_POSTS_REQUEST
     }
 }
 
@@ -26,7 +26,7 @@ const fetchPostsError=(error)=>{
     }
 }
 
-const fetchPostsAction= ()=>{
+export const fetchPostsAction= ()=>{
     return async (dispatch)=>{
             dispatch(fetchPostsRequest());
         try{
@@ -61,7 +61,7 @@ const fetchPostError=(error)=>{
     }
 }
 
-const fetchPostAction=(id)=>{
+export const fetchPostAction=(id)=>{
     return async (dispatch)=>{
             dispatch(fetchPostRequest());
         try{
