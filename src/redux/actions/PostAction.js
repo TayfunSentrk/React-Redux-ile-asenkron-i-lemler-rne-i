@@ -26,8 +26,8 @@ const fetchPostsError=(error)=>{
     }
 }
 
-const fetchPostsAction=async ()=>{
-    return (dispatch)=>{
+const fetchPostsAction= ()=>{
+    return async (dispatch)=>{
             dispatch(fetchPostsRequest());
         try{
             const response=await axios.get(apiUrl);
@@ -40,3 +40,37 @@ const fetchPostsAction=async ()=>{
     }
 }
 
+const fetchPostRequest=()=>{
+    return {
+        type:FETCH_POST_REQUEST
+    }
+}
+
+
+const fetchPostSuccess=(data)=>{
+    return {
+        type:FETCH_POST_SUCCESS,
+        payload:data
+    }
+}
+
+const fetchPostError=(error)=>{
+    return {
+        type:FETCH_POST_ERROR,
+        payload:error
+    }
+}
+
+const fetchPostAction=(id)=>{
+    return async (dispatch)=>{
+            dispatch(fetchPostRequest());
+        try{
+            const response=await axios.get(`${apiUrl}/${id}`)
+            dispatch(fetchPostSuccess(response.data));
+        }
+
+        catch(error){
+            dispatch(fetchPostError(error));
+        }
+    }
+}
