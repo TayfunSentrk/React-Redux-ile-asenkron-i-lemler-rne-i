@@ -1,0 +1,38 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px;
+}
+
+.container h3{
+    font-size: 30px;
+}
+
+.container p{
+    font-size: 29px;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+   
+    gap: 20px;
+
+}
+
+.container form button{
+    padding: 10px;
+    border-radius: 20px;
+    color:rebeccapurple;
+}
+
+.container form input{
+    padding: 10px;
+    border-radius: 5px;
+    
+}
