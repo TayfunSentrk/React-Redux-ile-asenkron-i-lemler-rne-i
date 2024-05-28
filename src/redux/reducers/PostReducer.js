@@ -18,7 +18,7 @@ const postReducer=(state=initalValue,action)=>{
         case FETCH_POST_REQUEST:
             return {...state,loading:true,error:""};
         case FETCH_POST_SUCCESS:
-            return {...state,posts:action.payload,loading:false,error:""}
+            return {...state,posts:[action.payload],loading:false,error:""}
 
         case FETCH_POST_ERROR:
             return {...state,posts:[],error:action.payload,loading:false};
